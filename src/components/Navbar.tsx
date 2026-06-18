@@ -14,7 +14,10 @@ export default function Navbar() {
   const [menuOpen,   setMenuOpen]   = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 60);
+    const onScroll = () => {
+      const events = document.getElementById("events");
+      if (events) setIsScrolled(window.scrollY > events.offsetTop);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -34,7 +37,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/60 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.04)] opacity-100 translate-y-0"
+          ? "bg-white/30 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.03)] opacity-100 translate-y-0"
           : "opacity-0 -translate-y-full pointer-events-none"
       }`}
     >
