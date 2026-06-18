@@ -52,7 +52,7 @@ export default function Navbar() {
             aria-label="Home"
           >
             <img
-              src="/favicon.jpg"
+              src="/assets/favicon.jpg"
               alt={`${coupleConfig.groom.name} & ${coupleConfig.bride.name}`}
               className="h-10 w-10 rounded-full object-cover shadow-sm"
             />
