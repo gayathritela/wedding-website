@@ -113,10 +113,10 @@ export default function Hero() {
         aria-hidden="true"
         style={{
           "--bg-mobile": "url('/assets/background/hero-bg-mobile.png')",
-          "--bg-desktop": "url('/assets/background/hero-bg.png')",
+          "--bg-desktop": "url('/assets/background/hero-bg-mobile.png')",
           "--bg-mobile-position": "center top",
           "--bg-desktop-position": "center top",
-          "--bg-desktop-size": "contain",
+          "--bg-desktop-size": "cover",
         } as CSSProperties}
       >
         {/* Base cream wash */}

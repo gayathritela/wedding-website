@@ -237,10 +237,10 @@ export default function EventTimeline() {
         aria-hidden="true"
         style={{
           "--bg-mobile": "url('/assets/background/bg-mobile.png')",
-          "--bg-desktop": "url('/assets/background/bg.png')",
+          "--bg-desktop": "url('/assets/background/bg-mobile.png')",
           "--bg-mobile-position": "center top",
           "--bg-desktop-position": "center top",
-          "--bg-desktop-size": "100% auto",
+          "--bg-desktop-size": "cover",
         } as CSSProperties}
       >
         <div className="absolute inset-0" style={{ background: "rgba(255,248,240,0.25)" }} />
