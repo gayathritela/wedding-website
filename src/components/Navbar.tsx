@@ -14,7 +14,7 @@ export default function Navbar() {
   const [menuOpen,   setMenuOpen]   = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > window.innerHeight * 0.7);
+    const onScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -34,7 +34,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.06)] opacity-100 translate-y-0"
+          ? "bg-white/60 backdrop-blur-md shadow-[0_1px_0_rgba(0,0,0,0.04)] opacity-100 translate-y-0"
           : "opacity-0 -translate-y-full pointer-events-none"
       }`}
     >
@@ -48,15 +48,11 @@ export default function Navbar() {
             className="group focus:outline-none"
             aria-label="Home"
           >
-            <span
-              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 ${
-                isScrolled ? "text-ink" : "text-white"
-              }`}
-            >
-              {coupleConfig.groom.name}
-              <span className="mx-1.5 font-sans text-sm font-light text-rose-400">&</span>
-              {coupleConfig.bride.name}
-            </span>
+            <img
+              src="/favicon.jpg"
+              alt={`${coupleConfig.groom.name} & ${coupleConfig.bride.name}`}
+              className="h-10 w-10 rounded-full object-cover shadow-sm"
+            />
           </a>
 
           {/* Desktop links */}

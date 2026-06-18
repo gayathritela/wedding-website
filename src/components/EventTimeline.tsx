@@ -22,19 +22,24 @@ const ILLUSTRATIONS: Record<string, React.ComponentType> = {
 };
 
 const EVENT_SWATCHES: Record<string, string[]> = {
-  "haldi":              ["#F9C74F", "#FFD166", "#7CB342", "#FFF8DC"],
-  "mehendi":            ["#2E7D32", "#81C784", "#C8E6C9", "#D4AF37"],
-  "engagement-sangeet": ["#D81B60", "#EC407A", "#8E24AA", "#D4AF37"],
-  "wedding":            ["#8B0000", "#B22222", "#D4AF37", "#FFF3D6"],
-  "reception":          ["#0B1F6A", "#1E3A8A", "#C0C0C0", "#111827"],
+  // Yellow shades + white
+  "haldi":              ["#F9C74F", "#FFD166", "#FFF176", "#FFFFFF"],
+  // Greens + light greens + floral pink
+  "mehendi":            ["#2E7D32", "#66BB6A", "#A5D6A7", "#DCEDC8"],
+  // Sparkly/glittery: gold, pink, purple, silver (all genders)
+  "engagement-sangeet": ["#D4AF37", "#0D2B6E", "#C0C0C0", "#212121"],
+  // Women: pastel pinks | Men: light greens
+  "wedding":            ["#F8BBD9", "#F48FB1", "#A5D6A7", "#C8E6C9"],
+  // Silver, black, evening glam
+  "reception":          ["#C0C0C0", "#9E9E9E", "#212121", "#8D6E63"],
 };
 
 const DRESS_CODE_TEXT: Record<string, string> = {
-  "haldi":              "Yellow",
-  "mehendi":            "Greens, florals",
-  "engagement-sangeet": "Pink, purple, glittery",
-  "wedding":            "Pastels pink",
-  "reception":          "Silver, black",
+  "haldi":              "Yellow shades & white",
+  "mehendi":            "Greens, light green & florals",
+  "engagement-sangeet": "Sparkly & glittery · Suits/coats for men",
+  "wedding":            "Women: pastel pinks · Men: light green",
+  "reception":          "Silver, black & evening glam",
 };
 
 const EVENT_ACCENT: Record<string, { circle: string; name: string; date: string }> = {
@@ -118,7 +123,7 @@ function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: num
             textAlign: "center",
             whiteSpace: "nowrap",
           }}>
-            {event.icon} {event.theme}
+            {event.theme}
           </p>
         </div>
 
@@ -260,6 +265,9 @@ export default function EventTimeline() {
             title="The Wedding Week"
           />
         </div>
+        <p className="text-center font-accent italic text-sm -mt-10 mb-2" style={{ color: "#6B5A4E" }}>
+          The story started with us. The celebration starts with you.
+        </p>
 
         <div style={{ marginTop: "clamp(12px, 3vw, 24px)" }}>
           {weddingEvents.map((event, index) => (

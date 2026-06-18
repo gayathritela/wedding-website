@@ -16,10 +16,10 @@ export default function Countdown({ event, light = true }: CountdownProps) {
     return () => clearInterval(timer);
   }, [event.date, event.timeISO]);
 
-  const textMain  = light ? "rgba(107,39,55,0.9)"  : "rgba(255,255,255,0.95)";
-  const textLabel = light ? "rgba(139,94,40,0.65)"  : "rgba(255,255,255,0.38)";
-  const boxBg     = light ? "rgba(107,39,55,0.09)"  : "rgba(255,255,255,0.08)";
-  const boxBorder = light ? "rgba(201,150,58,0.30)"  : "rgba(255,255,255,0.12)";
+  const textMain  = light ? "rgba(107,39,55,1)"    : "rgba(255,255,255,0.95)";
+  const textLabel = light ? "rgba(139,94,40,0.9)"  : "rgba(255,255,255,0.38)";
+  const boxBg     = light ? "rgba(107,39,55,0.14)" : "rgba(255,255,255,0.08)";
+  const boxBorder = light ? "rgba(201,150,58,0.50)" : "rgba(255,255,255,0.12)";
   const sepColor  = light ? "rgba(201,150,58,0.40)"  : "rgba(255,255,255,0.22)";
 
   if (timeLeft.isPast) {
@@ -41,7 +41,7 @@ export default function Countdown({ event, light = true }: CountdownProps) {
     <div className="text-center">
       <p className="font-sans text-[11px] tracking-[0.2em] uppercase mb-5 font-medium"
         style={{ color: textLabel }}>
-        Counting down to forever
+        Counting down to OUR BIG DAY 
       </p>
 
       <div className="flex items-end justify-center gap-3 sm:gap-5">

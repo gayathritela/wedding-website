@@ -1,10 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import viteImagemin from 'vite-plugin-imagemin'
 
-// ── Vite Configuration ─────────────────────────────────────────────────────
-// For GitHub Pages: change `base` to '/your-repo-name/'
-// For custom domain or root deployment: keep base as '/'
 export default defineConfig({
-  plugins: [react()],
-  base: '/', // ← Change to '/REPO_NAME/' for GitHub Pages
+  plugins: [
+    react(),
+    viteImagemin({
+      gifsicle: { optimizationLevel: 7 },
+      optipng: { optimizationLevel: 7 },
+      mozjpeg: { quality: 75 },
+      pngquant: { quality: [0.6, 0.8], speed: 4 },
+      svgo: { plugins: [{ name: 'removeViewBox' }] },
+    }),
+  ],
+  base: '/',
 })

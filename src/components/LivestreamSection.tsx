@@ -40,7 +40,7 @@ export default function LivestreamSection() {
 
       <div className="max-w-2xl mx-auto px-5 sm:px-8 relative z-[2]">
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-3 mb-3">
+          <div className="inline-flex items-center gap-3 mb-3" style={{ transform: "translateY(-60px)" }}>
             <div className="h-px w-6 bg-maroon/40" />
             <p className="text-[11px] tracking-[0.22em] uppercase font-semibold text-maroon">Watch Live</p>
             <div className="h-px w-6 bg-maroon/40" />

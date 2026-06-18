@@ -4,7 +4,7 @@ import { venueConfig } from "../data/weddingData";
 
 export default function TravelSection() {
   return (
-    <section id="travel" className="relative py-14 sm:py-20 overflow-hidden">
+    <section id="travel" className="relative pt-6 pb-14 sm:pt-8 sm:pb-20 overflow-hidden">
       <div className="max-w-lg mx-auto px-5 sm:px-8 relative">
 
         <p className="text-center text-xs font-semibold tracking-widest uppercase mb-6" style={{ color: "#a0694a" }}>
