@@ -21,25 +21,17 @@ const ILLUSTRATIONS: Record<string, React.ComponentType> = {
   "reception":           ReceptionIllustration,
 };
 
-const EVENT_SWATCHES: Record<string, string[]> = {
-  // Yellow shades + white
-  "haldi":              ["#F9C74F", "#FFD166", "#FFF176", "#FFFFFF"],
-  // Greens + light greens + floral pink
-  "mehendi":            ["#2E7D32", "#66BB6A", "#A5D6A7", "#DCEDC8"],
-  // Sparkly/glittery: gold, pink, purple, silver (all genders)
-  "engagement-sangeet": ["#D4AF37", "#0D2B6E", "#C0C0C0", "#212121"],
-  // Women: pastel pinks | Men: light greens
-  "wedding":            ["#F8BBD9", "#F48FB1", "#A5D6A7", "#C8E6C9"],
-  // Silver, black, evening glam
-  "reception":          ["#C0C0C0", "#9E9E9E", "#212121", "#8D6E63"],
-};
-
-const DRESS_CODE_TEXT: Record<string, string> = {
-  "haldi":              "Yellow shades & white",
-  "mehendi":            "Greens, light green & florals",
-  "engagement-sangeet": "Sparkly & glittery · Suits/coats for men",
-  "wedding":            "Women: pastel pinks · Men: light green",
-  "reception":          "Silver, black & evening glam",
+const DRESS_CODE_GROUPS: Record<string, { label: string; swatches: string[] }[]> = {
+  "haldi":              [{ label: "Sunny yellows & white",       swatches: ["#F9C74F", "#FFD166", "#FFF176", "#FFFFFF"] }],
+  "mehendi":            [{ label: "Florals", swatches: ["#F5F5DC", "#EAE0C8", "#D8CAB0", "#FFFFF0"] }],
+  "engagement-sangeet": [
+    { label: "Bling & glittery", swatches: ["#7B1FA2", "#0D2B6E", "#212121", "#1B5E20"] },
+  ],
+  "wedding": [
+    { label: "Women: pastel pinks", swatches: ["#F8BBD9", "#F48FB1"] },
+    { label: "Men: light green",    swatches: ["#A5D6A7", "#C8E6C9"] },
+  ],
+  "reception":          [{ label: "Evening glam", swatches: ["#C0C0C0", "#9E9E9E", "#212121", "#8D6E63"] }],
 };
 
 const EVENT_ACCENT: Record<string, { circle: string; name: string; date: string }> = {
@@ -74,8 +66,7 @@ function WeddingCalendarButton() {
 
 function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: number }) {
   const accent  = EVENT_ACCENT[event.id]  ?? EVENT_ACCENT["wedding"];
-  const swatches  = EVENT_SWATCHES[event.id]  ?? [];
-  const dressText = DRESS_CODE_TEXT[event.id] ?? "";
+  const dressGroups = DRESS_CODE_GROUPS[event.id] ?? [];
   const Illustration = ILLUSTRATIONS[event.id];
   const { day, month } = formatEventDate(event.date);
   const imageLeft = index % 2 === 0;
@@ -181,7 +172,8 @@ function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: num
 
           {/* Description */}
           <p style={{
-            fontSize: "clamp(0.65rem, 2.2vw, 0.8rem)",
+            fontFamily: "var(--font-accent, Georgia, serif)",
+            fontSize: "clamp(0.75rem, 2.2vw, 0.95rem)",
             color: "#6B5A4E",
             lineHeight: 1.55,
             marginBottom: "clamp(4px, 1vw, 10px)",
@@ -192,29 +184,27 @@ function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: num
           </p>
 
           {/* Dress code */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "clamp(4px, 1vw, 8px)",
-            flexWrap: "nowrap",
-            justifyContent: imageLeft ? "flex-start" : "flex-end",
-          }}>
-            <span style={{ fontSize: "clamp(8px, 1.8vw, 10px)", fontWeight: 600, color: accent.date, whiteSpace: "nowrap" }}>Wear:</span>
-            <span style={{ fontSize: "clamp(8px, 1.8vw, 10px)", color: "#6B5A4E", whiteSpace: "nowrap" }}>{dressText}</span>
-            <div style={{ display: "flex", gap: 3, flexShrink: 0 }}>
-              {swatches.map((c) => (
-                <span key={c} style={{
-                  display: "inline-block",
-                  width: "clamp(9px, 2vw, 12px)",
-                  height: "clamp(9px, 2vw, 12px)",
-                  borderRadius: "50%",
-                  background: c,
-                  border: "1px solid rgba(255,255,255,0.6)",
-                  boxShadow: "0 1px 3px rgba(0,0,0,0.12)",
-                  flexShrink: 0,
-                }} />
-              ))}
-            </div>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "4px 10px", justifyContent: imageLeft ? "flex-start" : "flex-end" }}>
+            <span style={{ fontFamily: "var(--font-accent, Georgia, serif)", fontSize: "clamp(9px, 1.8vw, 11px)", fontWeight: 600, color: accent.date }}>Wear:</span>
+            {dressGroups.map((group) => (
+              <div key={group.label} style={{ display: "flex", alignItems: "center", gap: 4, flexWrap: "nowrap" }}>
+                <span style={{ fontFamily: "var(--font-accent, Georgia, serif)", fontSize: "clamp(9px, 1.8vw, 11px)", color: "#6B5A4E", whiteSpace: "nowrap" }}>{group.label}</span>
+                <div style={{ display: "flex", gap: 3 }}>
+                  {group.swatches.map((c) => (
+                    <span key={c} style={{
+                      display: "inline-block",
+                      width: "clamp(9px, 2vw, 12px)",
+                      height: "clamp(9px, 2vw, 12px)",
+                      borderRadius: "50%",
+                      background: c,
+                      border: "1px solid rgba(255,255,255,0.6)",
+                      boxShadow: "0 1px 3px rgba(0,0,0,0.12)",
+                      flexShrink: 0,
+                    }} />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

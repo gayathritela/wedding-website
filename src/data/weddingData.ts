@@ -20,8 +20,8 @@ export const coupleConfig = {
     background: "Punjab",
   },
   heroImage: "/assets/couple/hero.jpg",
-  hashtag: "#DosaSaidYesToBriyani",
-  hashtag2: "#GPSLockedIn",
+  hashtag: "#GPSLockedIn",
+  hashtag2: "#DosaSaidYesToBriyani",
   welcomeMessage:
     "With the Divine Blessings of Arulmighu Kamatchi Amman and the joyful blessings of our families, we invite you to celebrate the union of Pranay & Gayathiri — a beautiful journey where Punjab's warmth meets Tamil Nadu's grace. We eagerly await your presence as they embark on this beautiful journey together.",
 };
@@ -145,7 +145,7 @@ export const weddingEvents: WeddingEvent[] = [
     endTimeISO: "T170000",
     location: "Trichy",
     description:
-      "Henna on hands, snacks on plates, music in the background, and lots of memories to catch up on. Come sit with us, laugh with us, and get your hands done.",
+      "Henna on our hands, music in the background, and so much tea to catch up on. Come sit with us, laugh with us, and get your hands done.",
     theme: "Henna & Tea",
     icon: "🌿",
     mapUrl: "https://maps.google.com/?q=Trichy+Tiruchirappalli",
@@ -202,7 +202,7 @@ export const weddingEvents: WeddingEvent[] = [
     endTimeISO: "T230000",
     location: "Moksh Banquets,Hyderabad",
     description:
-      "A celebration feels incomplete without Hyderabad biryani, and good food. Come dressed up, enjoy the feast, and celebrate with us.",
+      "A little sparkle, a lot of love, and of course, Hyderabad biryani. Come dressed up, come hungry, and celebrate with us.",
     theme: "Food & Celebration",
     icon: "🌸",
     mapUrl: "https://maps.google.com/?q=Moksh+Banquets+Necklace+Road+Hyderabad",
