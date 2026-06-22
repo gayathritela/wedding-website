@@ -183,7 +183,7 @@ export const weddingEvents: WeddingEvent[] = [
     endTimeISO: "T102000",
     location: "The Royal Mahal,Trichy",
     description:
-      "The day we have been waiting for. Please join us for our wedding muhurtham between 8:50 AM and 10:20 AM, and bless us as we begin this new chapter.",
+      "Join us for our wedding muhurtham and bless us as we begin our life together surrounded by the people we love.",
     theme: "The Big Day",
     icon: "🪔",
     mapUrl: venueConfig.googleMapsUrl,

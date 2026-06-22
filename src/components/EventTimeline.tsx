@@ -23,7 +23,7 @@ const ILLUSTRATIONS: Record<string, React.ComponentType> = {
 
 const DRESS_CODE_GROUPS: Record<string, { label: string; swatches: string[] }[]> = {
   "haldi":              [{ label: "Sunny yellows & white",       swatches: ["#F9C74F", "#FFD166", "#FFF176", "#FFFFFF"] }],
-  "mehendi":            [{ label: "Florals", swatches: ["#F5F5DC", "#EAE0C8", "#D8CAB0", "#FFFFF0"] }],
+  "mehendi":            [{ label: "Florals", swatches: ["#EAE0C8", "#D8CAB0", "#C8B89A", "#F5EDDC"] }],
   "engagement-sangeet": [
     { label: "Bling & glittery", swatches: ["#7B1FA2", "#0D2B6E", "#212121", "#1B5E20"] },
   ],
@@ -69,6 +69,7 @@ function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: num
   const dressGroups = DRESS_CODE_GROUPS[event.id] ?? [];
   const Illustration = ILLUSTRATIONS[event.id];
   const { day, month } = formatEventDate(event.date);
+  const timeText = event.time.includes("—") ? event.time.split("—")[1].trim() : "";
   const imageLeft = index % 2 === 0;
 
   const circleSz = "clamp(130px, 22vw, 190px)";
@@ -170,6 +171,19 @@ function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: num
             {event.location}
           </p>
 
+          {/* Time */}
+          {timeText && (
+            <p style={{
+              fontSize: "clamp(8px, 1.8vw, 11px)",
+              color: accent.date,
+              letterSpacing: "0.08em",
+              fontWeight: 600,
+              marginBottom: "clamp(4px, 1vw, 8px)",
+            }}>
+              {timeText}
+            </p>
+          )}
+
           {/* Description */}
           <p style={{
             fontFamily: "var(--font-accent, Georgia, serif)",
@@ -197,7 +211,7 @@ function EventRow({ event, index }: { event: typeof weddingEvents[0]; index: num
                       height: "clamp(9px, 2vw, 12px)",
                       borderRadius: "50%",
                       background: c,
-                      border: "1px solid rgba(255,255,255,0.6)",
+                      border: "1px solid rgba(0,0,0,0.18)",
                       boxShadow: "0 1px 3px rgba(0,0,0,0.12)",
                       flexShrink: 0,
                     }} />
