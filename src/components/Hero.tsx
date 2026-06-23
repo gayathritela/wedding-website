@@ -147,7 +147,7 @@ export default function Hero() {
           className="relative font-accent italic mt-10 mb-5 tracking-wide mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-semibold"
           style={{ fontSize: "clamp(1rem, 2.2vw, 1.2rem)", color: "#3D2B1F", maxWidth: "480px" }}
         >
-          <span>New season. Same cast.<br />This time, it's a wedding special. ❤️</span>
+          <span>New season. Same cast.<br />This time, it's a Wedding special.❤️</span>
         </motion.div>
 
         {/* Names */}
