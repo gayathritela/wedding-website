@@ -164,7 +164,7 @@ export const weddingEvents: WeddingEvent[] = [
     endTimeISO: "T220000",
     location: "The Royal Mahal, Trichy",
     description:
-      "Rings, music, dancing, and a night full of fun. No language rules, no shy faces, just every beat and every vibe. Come show us the talent you have been hiding!",
+      "Rings, music, dancing, and a night full of fun. No language rules, no shy faces, just good vibes. Come show us the talent you have been hiding!",
     theme: "Rings, Music & Masti",
     icon: "💍",
     mapUrl: venueConfig.googleMapsUrl,
@@ -202,7 +202,7 @@ export const weddingEvents: WeddingEvent[] = [
     endTimeISO: "T230000",
     location: "Moksh Banquets,Hyderabad",
     description:
-      "A little sparkle, a lot of love, and of course, Hyderabad biryani. Come dressed up, come hungry, and celebrate with us.",
+      "What's a celebration without Hyderabadi biryani? Come dressed up and come hungry.",
     theme: "Food & Celebration",
     icon: "🌸",
     mapUrl: "https://maps.google.com/?q=Moksh+Banquets+Necklace+Road+Hyderabad",
