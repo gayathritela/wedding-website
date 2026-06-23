@@ -147,7 +147,7 @@ export default function Hero() {
           className="relative font-accent italic mt-10 mb-5 tracking-wide mx-auto flex flex-wrap items-center justify-center gap-x-2 gap-y-1 font-semibold"
           style={{ fontSize: "clamp(1rem, 2.2vw, 1.2rem)", color: "#3D2B1F", maxWidth: "480px" }}
         >
-          <span>Dosa found Biryani, and now we are getting married. ❤️</span>
+          <span>New season. Same cast.<br />This time, it's a wedding special. ❤️</span>
         </motion.div>
 
         {/* Names */}
@@ -274,7 +274,7 @@ export default function Hero() {
           className="relative font-accent italic text-center mx-auto"
           style={{ fontSize: "clamp(0.95rem, 2.2vw, 1.2rem)", color: "#6B5A4E", lineHeight: 1.65, maxWidth: "380px" }}
         >
-          From our favourite memories to this beautiful new beginning,<br />we would love for you to celebrate with us.
+          You've been part of our favourite memories.<br />Now, we'd love for you to be part of this one too. ❤️
         </motion.p>
 
       </div>

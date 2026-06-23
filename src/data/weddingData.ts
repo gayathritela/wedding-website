@@ -126,7 +126,7 @@ export const weddingEvents: WeddingEvent[] = [
     endTimeISO: "T130000",
     location: "Trichy",
     description:
-      "Flowers, laughter, yellow outfits, colours, and a little pre-wedding madness. No one is leaving spotless!",
+      "Flowers, laughter, colours, and a little pre-wedding madness. No one is leaving spotless!",
     theme: "Happy Vibes",
     icon: "🌼",
     mapUrl: "https://maps.google.com/?q=Trichy+Tiruchirappalli",
@@ -175,7 +175,7 @@ export const weddingEvents: WeddingEvent[] = [
   },
   {
     id: "wedding",
-    name: "Wedding Muhurtham",
+    name: "The Kalyanam",
     shortName: "Wedding",
     date: `${EVENT_YEAR}-07-16`,
     time: "Thursday, July 16, 2026 — 8:50 AM to 10:20 AM",
@@ -194,7 +194,7 @@ export const weddingEvents: WeddingEvent[] = [
   },
   {
     id: "reception",
-    name: "Wedding Reception",
+    name: "Reception",
     shortName: "Reception",
     date: `${EVENT_YEAR}-07-23`,
     time: "Thursday, July 23, 2026 — 7:00 PM onwards",
